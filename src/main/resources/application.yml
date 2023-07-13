@@ -1,0 +1,31 @@
+spring:
+  flyway:
+    locations=classpath:/db/migration
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/"
+    username: postgres
+    password: 9815695
+  data:
+    redis:
+      port: 6379
+      host: localhost
+coin-market-cap:
+  base-url: https://pro-api.coinmarketcap.com
+  api-key: eb1bdee2-b00d-42d8-8360-3a4b63a78b19
+  trending: "/v1/cryptocurrency/listings/latest"
+  limit: 10
+
+application:
+  security:
+    jwt:
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      expiration: 86400000 # a day
+      jwtCookieName: DA89DAD831SDAD
+
+      refresh-token:
+        expiration: 604800000 # 7 days
+
